@@ -57,7 +57,7 @@ Ten plik jest źródłem prawdy o projekcie. Przy każdej zmianie ustaleń — z
 3. **Pytania** — gracze dostają pytanie, impostor inne (dobrane tak, by odpowiedzi brzmiały podobnie). Odpowiedzi mówione na głos po kolei. Potem na ekranie dyskusji pokazuje się pytanie graczy.
 
 ### Modyfikatory (domyślnie WYŁĄCZONE, działają tylko gdy zaznaczone)
-- **2 impostorów** — dostępne od 5 graczy. Obaj dostają tę samą wskazówkę, nie wiedzą o sobie, punkty liczone osobno dla każdego.
+- **Może 2 impostorów** — dostępne od 5 graczy. Gdy włączone, drugi impostor pojawia się w **25% rund** (losowo, `SZANSA_DRUGIEGO` w `js/modyfikatory/dwoch.js`), żeby nie było wiadomo, czy w rundzie jest jeden, czy dwóch. Obaj dostają tę samą wskazówkę, nie wiedzą o sobie, punkty liczone osobno dla każdego.
 - **Chaos** — 10% szans na rundę chaosu:
   - „brak impostora” (wszyscy mają normalne hasło),
   - „wszyscy impostorami” (każdy widzi ekran impostora z tą samą wskazówką).
