@@ -12,6 +12,8 @@ Ten plik jest źródłem prawdy o projekcie. Przy każdej zmianie ustaleń — z
 - **PWA w czystym HTML/CSS/JS** — bez frameworków i bez kroku budowania (na Macu nie ma Node.js ani Xcode; jest tylko git).
 - Działa **offline** (service worker + manifest), uruchamiana z ikony na ekranie początkowym.
 - Hosting: **GitHub Pages** (darmowy, trwały). Instalacja na iPhonie: Safari → Udostępnij → „Dodaj do ekranu początkowego”.
+  - Repozytorium: https://github.com/dawidek3515-sys/impostor (gałąź `main`, Pages z `/ (root)`).
+  - Adres gry: **https://dawidek3515-sys.github.io/impostor/**
 - Stan gry (gracze, punkty, ustawienia, własne hasła, historia wylosowanych haseł) trzymany w `localStorage` telefonu.
 - Wibracje NIE działają w Safari na iOS — sygnały tylko dźwiękiem i animacją.
 - Wszystkie odczyty/zapisy `localStorage` w try/catch.
@@ -157,7 +159,7 @@ ikony/                   # PNG: apple-touch-icon (180), 192, 512, 512 maskable
 
 Ekran graczy, ustawienia (tryb, modyfikatory, kategorie, trudność, timer, cel punktowy), rozdanie ról z przytrzymaniem, rotacja startującego, timer, odsłonięcie, punktacja z korektą, własne hasła z eksportem, baza ~500 haseł / ~150 par undercover / ~80 par pytań, jasny planszówkowy wygląd, PWA offline, instrukcja wdrożenia na GitHub Pages krok po kroku.
 
-**Status (2026-10-23): v1 zbudowana.** Przetestowana w przeglądarce (wszystkie tryby, 2 impostorów, chaos, dogrywka, timer, punktacja, zwycięzca, „Nasze”). Jeszcze NIE sprawdzone na prawdziwym iPhonie (przytrzymanie palcem, dźwięk, instalacja na ekranie, offline).
+**Status (2026-10-23): v1 zbudowana.** Przetestowana w przeglądarce (wszystkie tryby, 2 impostorów, chaos, dogrywka, timer, punktacja, zwycięzca, „Nasze”). Opublikowana na GitHub Pages — service worker się instaluje i zapisuje komplet plików (40) do pracy offline. Jeszcze NIE sprawdzone na prawdziwym iPhonie (przytrzymanie palcem, dźwięk, instalacja na ekranie, offline).
 
 ## Rozbudowa w przyszłości (NIE w v1)
 
