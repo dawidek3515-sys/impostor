@@ -11,13 +11,13 @@
     { "haslo": "Siłownia", "skojarzenia": ["hantle", "karnet", "lustro"] },
     { "haslo": "Biblioteka", "skojarzenia": ["cisza", "regały", "wypożyczenie"] },
     { "haslo": "Supermarket", "skojarzenia": ["kasa", "wózek", "promocja"] },
-    { "haslo": "Kościół", "skojarzenia": ["msza", "organy", "dzwony"] },
+    { "haslo": "Kościół", "skojarzenia": ["niedziela", "organy", "dzwony"] },
     { "haslo": "Zoo", "skojarzenia": ["wybieg", "karmienie", "wycieczka szkolna"] },
-    { "haslo": "Cmentarz", "skojarzenia": ["znicze", "1 listopada", "nagrobek"] },
+    { "haslo": "Cmentarz", "skojarzenia": ["cisza", "1 listopada", "nagrobek"] },
     { "haslo": "Restauracja", "skojarzenia": ["kelner", "menu", "napiwek"] },
     { "haslo": "Basen", "skojarzenia": ["czepek", "chlor", "ratownik"] },
-    { "haslo": "Więzienie", "skojarzenia": ["kraty", "cela", "wyrok"] },
-    { "haslo": "Dworzec", "skojarzenia": ["peron", "opóźnienie", "zapowiedź"] },
+    { "haslo": "Więzienie", "skojarzenia": ["kraty", "ucieczka", "wyrok"] },
+    { "haslo": "Dworzec", "skojarzenia": ["walizki", "opóźnienie", "zapowiedź"] },
     { "haslo": "Stadion", "skojarzenia": ["trybuny", "kibice", "murawa"] },
     { "haslo": "Komisariat", "skojarzenia": ["radiowóz", "przesłuchanie", "zgłoszenie"] },
     { "haslo": "Bank", "skojarzenia": ["kredyt", "sejf", "okienko"] },
@@ -36,8 +36,8 @@
     { "haslo": "Sąd", "skojarzenia": ["sędzia", "rozprawa", "adwokat"] },
     { "haslo": "Stacja kosmiczna", "skojarzenia": ["nieważkość", "orbita", "astronauta"] },
     { "haslo": "Bazar", "skojarzenia": ["targowanie", "warzywa", "stragan"] },
-    { "haslo": "Sejm", "skojarzenia": ["posłowie", "Wiejska", "ustawa"] },
-    { "haslo": "Wesele", "skojarzenia": ["oczepiny", "wujek", "remiza"] },
+    { "haslo": "Sejm", "skojarzenia": ["kłótnie", "Wiejska", "ustawa"] },
+    { "haslo": "Sala weselna", "skojarzenia": ["oczepiny", "wujek", "remiza"] },
     { "haslo": "Przedszkole", "skojarzenia": ["leżakowanie", "plastelina", "pani"] }
   ]
 }

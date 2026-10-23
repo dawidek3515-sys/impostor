@@ -113,14 +113,26 @@ Format kategorii (`dane/hasla/*.json`):
 ```
 
 - Hasło może mieć opcjonalne pole `"kategoria"` — nadpisuje nazwę kategorii we wskazówce (używane przez „Nasze”).
-- Każde hasło ma 2–3 **starannie dobrane skojarzenia** — nie za oczywiste, nie z kosmosu.
-- Stan v1: **15 kategorii, 540 haseł** (zwierzęta, jedzenie, miejsca, zawody, sport, filmy i seriale, polska popkultura, przedmioty, kraje, marki, czynności, sławni ludzie, bajki, muzyka, impreza 18+). Hasła nie powtarzają się między kategoriami.
+- Każde hasło ma 2–3 **starannie dobrane skojarzenia** — nie za oczywiste, nie z kosmosu (zasady niżej, w „Balans haseł”).
+- Stan (2026-10-23): **20 kategorii, 720 haseł** (zwierzęta, jedzenie, miejsca, zawody, sport, filmy i seriale, polska popkultura, przedmioty, kraje, marki, czynności, sławni ludzie, bajki, muzyka, piłka nożna, gry komputerowe, święta i okazje, szkoła i studia, internet, impreza 18+). Hasła nie powtarzają się między kategoriami.
 - Kategoria **18+ (`"dorosle": true`) domyślnie wyłączona**. Kategorie włączane/wyłączane w ustawieniach (kategoria bez wpisu w ustawieniach = domyślnie włączona, chyba że 18+).
-- `undercover.json`: tablica par (v1: **194**), np. `{ "a": "Pizza", "b": "Zapiekanka" }`. Która strona trafia do impostora — losowane.
-- `pytania.json`: tablica par (v1: **84**), np. `{ "gracze": "Ile razy w tygodniu ćwiczysz?", "impostor": "Ile masz rodzeństwa?" }`. Odpowiedzi na oba pytania muszą być tego samego typu (liczba z podobnego zakresu, miejsce, osoba z grupy itd.).
+- `undercover.json`: tablica par (**224**), np. `{ "a": "Pizza", "b": "Zapiekanka" }`. Która strona trafia do impostora — losowane.
+- `pytania.json`: tablica par (**99**), np. `{ "gracze": "Ile razy w tygodniu ćwiczysz?", "impostor": "Ile masz rodzeństwa?" }`. Odpowiedzi na oba pytania muszą być tego samego typu (liczba z podobnego zakresu, miejsce, osoba z grupy itd.).
 - Lista plików kategorii: `dane/hasla/index.json` (`{ "kategorie": ["zwierzeta", ...] }`), bo GitHub Pages nie listuje katalogów — przy dodaniu nowej kategorii dopisz ją tam. Service worker sam bierze z niej listę plików do zapisania offline.
 - Hasła, pary i pytania **nie powtarzają się**, dopóki pula się nie wyczerpie (historia w `localStorage`, potem komunikat „tasujemy od nowa”).
 - **Własne hasła „Nasze”**: formularz w aplikacji (hasło, kategoria, opcjonalne skojarzenie), zapis w `localStorage`, widoczne jako kategoria „Nasze” 💬. Przycisk **„Eksportuj”** kopiuje JSON w formacie pliku kategorii (gdy schowek nie działa — pokazuje tekst do ręcznego skopiowania). Jest też **„Importuj”** (wklejenie wyeksportowanego JSON-a, bez duplikatów).
+
+### Balans haseł (wzorowane na The Chameleon, Spyfall, Undercover — pełny przegląd w `PRZEGLAD_HASEL.md`)
+- **Hasło**: zna je każdy dorosły z grupy 20–35 lat; da się o nim powiedzieć ≥ 8 różnych skojarzeń; ma kilku „kuzynów”, z którymi można je pomylić.
+- **Skojarzenie** ma dawać impostorowi „sąsiedztwo, nie adres”:
+  - test 3 sekund — jeśli połowa grupy zgadłaby hasło z samego skojarzenia, jest za mocne;
+  - powinno pasować do 3–5 innych możliwych haseł;
+  - zakazane: imiona/nazwiska postaci, stolice, cytaty i slogany, tytuły dzieł, nazwy własne jednoznacznie przypisane do hasła, ten sam rdzeń co hasło, synonimy;
+  - za słabe: związek znany tylko autorowi (siedziba studia, rodzinne miasto);
+  - wszystkie 3 skojarzenia na podobnym poziomie (Normalny losuje jedno z trzech);
+  - wspólne skojarzenia między hasłami są dobre.
+- **Para Undercover**: ta sama kategoria, ~70–80% cech wspólnych, różnica w 1–2 cechach, oba słowa równie znane.
+- **Para pytań**: ten sam typ i zakres odpowiedzi, ale nie pytania, na które większość odpowie identycznie; bez pytań tak/nie.
 
 ### Jak rozbudowywać bazę
 - Edytuj plik JSON na github.com (ikona ✏️) → po ~minucie zmiana jest na telefonie (pamiętaj o odświeżeniu cache service workera — podbij wersję w `sw.js`).
@@ -165,4 +177,6 @@ Ekran graczy, ustawienia (tryb, modyfikatory, kategorie, trudność, timer, cel 
 
 - **Sekretne zadanie impostora** — np. „użyj w rundzie słowa *ziemniak*”, za dodatkowy punkt.
 - **Tryb „Słowo po słowie”** — aplikacja pilnuje kolejki, każdy mówi jedno słowo w swojej turze.
-- Kolejne kategorie haseł (np. piłka nożna, gry, wewnętrzne żarty ekipy).
+- Kolejne kategorie haseł (np. wewnętrzne żarty ekipy); rozbudowa istniejących do ~50 haseł.
+- **Poziomy trudności w Undercover** — pole `"poziom"` w parach (zbyt bliskie pary, np. Krokodyl/Aligator, jako trudne).
+- **Wskazówka „Kameleon”** — impostor widzi 6–8 haseł z kategorii, w tym prawdziwe.
