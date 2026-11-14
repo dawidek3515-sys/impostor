@@ -162,7 +162,8 @@ ikony/                   # PNG: apple-touch-icon (180), 192, 512, 512 maskable
 
 - Nowy tryb = nowy plik w `js/tryby/` + dopisanie w `js/tryby/index.js` (+ w `PLIKI` w `sw.js`). Interfejs opisany w komentarzu w `js/tryby/index.js`.
 - Service worker: pliki aplikacji z pamięci (cache-first), pliki z `dane/` od razu z pamięci, a w tle dociągana świeższa wersja na następne uruchomienie.
-- Do testów lokalnych potrzebny jest serwer (moduły ES i `fetch` nie działają z `file://`).
+- Przyciski z `data-a` na dotyku działają już przy **puszczeniu palca** (`pointerup`), a następujący po nim `click` jest pomijany — Safari na iOS po przytrzymaniu karty potrafił „zjeść” pierwszy click i „Dalej” trzeba było klikać dwa razy. Myszka i klawiatura idą zwykłym `click`.
+- Do testów lokalnych potrzebny jest serwer (moduły ES i `fetch` nie działają z `file://`) — `.claude/serwer.js` (nie w repo), uruchamiany z `.claude/launch.json`.
 - Instrukcja wdrożenia dla Dawida: `WDROZENIE.md`.
 
 ---

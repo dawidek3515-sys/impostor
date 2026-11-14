@@ -229,9 +229,32 @@ const AKCJE = {
   },
 };
 
+// Na dotyku przycisk działa już przy puszczeniu palca, a nie dopiero na „click”: Safari na iOS
+// po długim przytrzymaniu karty potrafi zjeść pierwszy click i „Dalej” trzeba było klikać dwa razy.
+// Click, który przychodzi zaraz potem, jest ignorowany, żeby nie trafił w przycisk na nowym ekranie
+// (flaga, a nie czas — po okienku confirm() click przychodzi z opóźnieniem).
+let wcisniety = null;
+let pominClick = false;
+const wykonaj = przycisk => { if (przycisk && !przycisk.disabled) AKCJE[przycisk.dataset.a]?.(przycisk.dataset); };
+
+app.addEventListener('pointerdown', e => {
+  pominClick = false;
+  wcisniety = e.pointerType === 'mouse' ? null : e.target.closest('[data-a]');
+});
+app.addEventListener('pointerup', e => {
+  const przycisk = wcisniety;
+  wcisniety = null;
+  if (!przycisk || !przycisk.isConnected) return;
+  // palec musi zejść z przycisku w jego obrębie (zsunięcie palca = rezygnacja)
+  if (!przycisk.contains(document.elementFromPoint(e.clientX, e.clientY))) return;
+  pominClick = true;
+  wykonaj(przycisk);
+});
+app.addEventListener('pointercancel', () => { wcisniety = null; });
+
 app.addEventListener('click', e => {
-  const przycisk = e.target.closest('[data-a]');
-  if (przycisk && !przycisk.disabled) AKCJE[przycisk.dataset.a]?.(przycisk.dataset);
+  if (pominClick) { pominClick = false; return; }
+  wykonaj(e.target.closest('[data-a]'));
 });
 
 /* ---------- formularze ---------- */

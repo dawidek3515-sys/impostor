@@ -1,6 +1,6 @@
 // Service worker — gra działa offline.
 // PRZY KAŻDEJ ZMIANIE PLIKÓW podbij WERSJA, inaczej telefony zostaną przy starej kopii.
-const WERSJA = 'impostor-v3';
+const WERSJA = 'impostor-v4';
 
 const PLIKI = [
   './',
